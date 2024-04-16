@@ -1,0 +1,49 @@
+---
+const { imgUrl } = Astro.props;
+
+console.log("IMG URL", imgUrl);
+// let textColor = "yellow";
+---
+
+<div class="item">
+  <p>Bacon ipsum dolor amet porchetta fatback tail, leberkas jerky hamburger pork belly.</p><p>Chuck t-bone drumstick boudin cow jerky kielbasa frankfurter pig salami sausage ham.</p>
+  <p>Short ribs ground round beef swine tri-tip cupim shank picanha biltong bresaola shoulder fatback tail pork loin. Kielbasa prosciutto cupim sirloin pancetta.</p><p>
+    Pork chop beef ribs frankfurter chicken spare ribs, drumstick biltong short loin porchetta pastrami tri-tip flank.
+  </p>
+</div>
+<style define:vars={{ imgUrl }}>
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .item {
+    border: 1px solid #333;
+    height: auto;
+    width: 100vw;
+    text-align: center;
+    /* color: var(--textColor); */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: hsl(60, 60%, 61%);
+    background-image: var(--imgUrl);
+    /* background-image: url("img-1.jpg"); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  /* .item:not(:first-of-type) {
+    opacity: 0.4;
+    transition: opacity 2s;
+  } */
+
+  p {
+    font-size: 3rem;
+    width: 90vw;
+    max-width: 800px;
+    margin: 4rem 0;
+  }
+</style>
