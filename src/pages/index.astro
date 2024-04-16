@@ -1,9 +1,12 @@
 ---
+import WebFeatureLayout from "../layouts/WebFeatureLayout.astro";
 import ImageItem from "../components/ImageItem.astro";
+import { Code } from "astro:components";
 ---
 
-<!-- <h1>Astro Version</h1> -->
-<ImageItem imgUrl="url('img-1.jpg')" />
-<ImageItem imgUrl="url('img-2.jpg')" />
-<ImageItem imgUrl="url('img-3.jpg')" />
-<ImageItem imgUrl="" />
+<WebFeatureLayout>
+  <ImageItem imgUrl="url('img-1.jpg')" />
+  <ImageItem imgUrl="url('img-2.jpg')" />
+  <ImageItem imgUrl="url('img-3.jpg')" />
+  <ImageItem imgUrl="" />
+</WebFeatureLayout>

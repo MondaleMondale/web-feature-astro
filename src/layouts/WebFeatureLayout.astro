@@ -1,0 +1,40 @@
+---
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Webfeature Layout</title>
+  </head>
+
+  <body>
+    <slot />
+
+    <script>
+      const boxes = document.querySelectorAll(".item");
+      window.addEventListener("scroll", fadeBoxes);
+
+      function fadeBoxes() {
+        console.log("helllo");
+        const triggerBottom = window.innerHeight - 200;
+
+        boxes.forEach((box) => {
+          //find positions and height
+          const boxHeight = box.getBoundingClientRect().height;
+          const boxTop = box.getBoundingClientRect().top;
+          const boxBottom = box.getBoundingClientRect().bottom;
+
+          if (boxTop < triggerBottom && boxTop > -boxHeight + 100) {
+            box.classList.add("fade-in");
+          }
+          if (boxBottom < 100 || boxTop > triggerBottom) {
+            box.classList.remove("fade-in");
+            box.style.opcity = 0.4;
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
