@@ -36,5 +36,43 @@
         });
       }
     </script>
+    <!-- <script>
+      const boxes = document.querySelectorAll(".item");
+      const paragraphs = document.querySelectorAll("p");
+      window.addEventListener("scroll", fadeBoxes);
+
+      function fadeBoxes() {
+        console.log("PARAGRAFS", paragraphs);
+        const triggerBottom = window.innerHeight - 200;
+
+        boxes.forEach((box) => {
+          //find positions and height
+          const boxHeight = box.getBoundingClientRect().height;
+          const boxTop = box.getBoundingClientRect().top;
+          const boxBottom = box.getBoundingClientRect().bottom;
+
+          if (boxTop < triggerBottom && boxTop > -boxHeight + 100) {
+            box.classList.add("fade-in");
+          }
+          if (boxBottom < 100 || boxTop > triggerBottom) {
+            box.classList.remove("fade-in");
+            box.style.opcity = 0.4;
+          }
+        });
+        paragraphs.forEach((paragraph) => {
+          const pHeight = paragraph.getBoundingClientRect().height;
+          const pTop = paragraph.getBoundingClientRect().top;
+          const pBottom = paragraph.getBoundingClientRect().bottom;
+
+          if (pTop < triggerBottom && pTop > -pHeight + 100) {
+            paragraph.classList.add("transform");
+          }
+          if (pBottom < 100 || pTop > triggerBottom) {
+            paragraph.classList.remove("transform");
+            paragraph.style.translateY = 50;
+          }
+        });
+      }
+    </script> -->
   </body>
 </html>

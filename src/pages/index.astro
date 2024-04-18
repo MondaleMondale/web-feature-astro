@@ -1,12 +1,23 @@
 ---
 import WebFeatureLayout from "../layouts/WebFeatureLayout.astro";
 import ImageItem from "../components/ImageItem.astro";
-import { Code } from "astro:components";
+import VideoItem from "../components/VideoItem.astro";
 ---
 
 <WebFeatureLayout>
-  <ImageItem imgUrl="url(img-1.jpg)" />
-  <ImageItem imgUrl="url(img-2.jpg)" />
+  <ImageItem
+    imgUrl="url(img-1.jpg)"
+    rawHTMLString="<p>Bacon ipsum dolor amet porchetta fatback tail, leberkas jerky hamburger pork belly.</p><p>Chuck t-bone drumstick boudin cow jerky kielbasa frankfurter pig salami sausage ham.</p><p>Short ribs ground round beef swine tri-tip cupim shank picanha biltong bresaola shoulder fatback tail pork loin. Kielbasa prosciutto cupim sirloin pancetta.</p><p>Pork chop beef ribs frankfurter chicken spare ribs, drumstick biltong short loin porchetta pastrami tri-tip flank.</p>"
+  />
+  <ImageItem
+    imgUrl="url(img-2.jpg)"
+    rawHTMLString="<p>Bacon ipsum dolor amet porchetta fatback tail, leberkas jerky hamburger pork belly.</p><p>Chuck t-bone drumstick boudin cow jerky kielbasa frankfurter pig salami sausage ham.</p><p>Short ribs ground round beef swine tri-tip cupim shank picanha biltong bresaola shoulder fatback tail pork loin. Kielbasa prosciutto cupim sirloin pancetta.</p><p>Pork chop beef ribs frankfurter chicken spare ribs, drumstick biltong short loin porchetta pastrami tri-tip flank.</p>"
+  />
+
   <ImageItem imgUrl="url(img-3.jpg)" />
+  <VideoItem
+    videoUrl="https://assets.codepen.io/6093409/river.mp4"
+    rawHTMLString="<p>!!Bacon ipsum dolor amet porchetta fatback tail, leberkas jerky hamburger pork belly.</p><p>Chuck t-bone drumstick boudin cow jerky kielbasa frankfurter pig salami sausage ham.</p>"
+  />
   <ImageItem imgUrl="" />
 </WebFeatureLayout>

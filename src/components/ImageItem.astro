@@ -1,16 +1,14 @@
 ---
-const { imgUrl } = Astro.props;
-
-console.log("IMG URL", imgUrl);
-// let textColor = "yellow";
+const { imgUrl, rawHTMLString } = Astro.props;
 ---
 
 <div class="item">
-  <p>Bacon ipsum dolor amet porchetta fatback tail, leberkas jerky hamburger pork belly.</p><p>Chuck t-bone drumstick boudin cow jerky kielbasa frankfurter pig salami sausage ham.</p>
-  <p>Short ribs ground round beef swine tri-tip cupim shank picanha biltong bresaola shoulder fatback tail pork loin. Kielbasa prosciutto cupim sirloin pancetta.</p><p>
-    Pork chop beef ribs frankfurter chicken spare ribs, drumstick biltong short loin porchetta pastrami tri-tip flank.
-  </p>
+  <h1 set:html={rawHTMLString} />
+  <!-- <p>Bacon ipsum dolor amet porchetta fatback tail, leberkas jerky hamburger pork belly.</p><p>Chuck t-bone drumstick boudin cow jerky kielbasa frankfurter pig salami sausage ham.</p><p>
+    Short ribs ground round beef swine tri-tip cupim shank picanha biltong bresaola shoulder fatback tail pork loin. Kielbasa prosciutto cupim sirloin pancetta.
+  </p><p>Pork chop beef ribs frankfurter chicken spare ribs, drumstick biltong short loin porchetta pastrami tri-tip flank.</p> -->
 </div>
+
 <style define:vars={{ imgUrl }}>
   * {
     margin: 0;
@@ -29,7 +27,7 @@ console.log("IMG URL", imgUrl);
     align-items: center;
     background: hsl(60, 60%, 61%);
     background-image: var(--imgUrl);
-    /* background-image: url("img-1.jpg"); */
+
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -42,10 +40,20 @@ console.log("IMG URL", imgUrl);
   .item.fade-in {
     opacity: 1;
   }
-  p {
+  h1 {
     font-size: 3rem;
     width: 90vw;
     max-width: 800px;
     margin: 4rem 0;
+  }
+</style>
+<style is:global>
+  p.transform {
+    /* background-color: red; */
+    transform: translateY(0);
+  }
+  p {
+    transform: translateY(50px);
+    transition: transform 1s;
   }
 </style>
